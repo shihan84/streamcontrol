@@ -1,5 +1,9 @@
 # StreamControl Technical Documentation
 
+**Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.**
+
+This software and documentation are proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
+
 ## Table of Contents
 1. [Architecture Overview](#architecture-overview)
 2. [Technology Stack](#technology-stack)

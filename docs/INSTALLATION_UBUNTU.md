@@ -1,5 +1,9 @@
 # StreamControl Ubuntu 22.04 Installation Guide
 
+**Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.**
+
+This software and documentation are proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
+
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [System Requirements](#system-requirements)
