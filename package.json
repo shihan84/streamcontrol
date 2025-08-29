@@ -1,6 +1,10 @@
 {
-  "name": "nextjs_tailwind_shadcn_ts",
-  "version": "0.1.0",
+  "name": "streamcontrol",
+  "version": "1.0.0",
+  "description": "A comprehensive streaming management platform for professional broadcast environments",
+  "author": "Morus Broadcasting Pvt Ltd",
+  "license": "SEE LICENSE IN LICENSE",
+  "copyright": "Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.",
   "private": true,
   "scripts": {
     "dev": "nodemon --exec \"npx tsx server.ts\" --watch server.ts --watch src --ext ts,tsx,js,jsx",

@@ -2,6 +2,10 @@
 
 Welcome to the StreamControl documentation! This comprehensive guide will help you understand, install, configure, and use the StreamControl streaming management platform.
 
+**Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.**
+
+This software and documentation are proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
+
 ## 📚 Documentation Index
 
 ### 🚀 Getting Started
@@ -248,7 +252,15 @@ npm run dev
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is proprietary software owned by Morus Broadcasting Pvt Ltd. All rights reserved.
+
+**License Terms:**
+- This software is licensed, not sold
+- Unauthorized copying, distribution, or use is strictly prohibited
+- Commercial use requires written permission from Morus Broadcasting Pvt Ltd
+- See the LICENSE file for complete terms and conditions
+
+For licensing inquiries, please contact Morus Broadcasting Pvt Ltd.
 
 ## 🆘 Support
 
@@ -272,4 +284,8 @@ For support and questions:
 
 ---
 
-*This documentation is maintained by the StreamControl development team. For the latest updates, please check the GitHub repository.*
+*This documentation is maintained by Morus Broadcasting Pvt Ltd. For the latest updates, please check the GitHub repository.*
+
+---
+
+**Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.**

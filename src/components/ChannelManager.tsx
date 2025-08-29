@@ -1,3 +1,11 @@
+/**
+ * StreamControl - Channel Manager Component
+ * 
+ * Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.
+ * This software is proprietary and confidential.
+ * Unauthorized copying, distribution, or use is strictly prohibited.
+ */
+
 "use client"
 
 import React, { useState, useEffect } from 'react'

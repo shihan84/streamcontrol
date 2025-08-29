@@ -1,3 +1,11 @@
+/**
+ * StreamControl - Main Dashboard Page
+ * 
+ * Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.
+ * This software is proprietary and confidential.
+ * Unauthorized copying, distribution, or use is strictly prohibited.
+ */
+
 "use client"
 
 import { useState, useEffect } from 'react'

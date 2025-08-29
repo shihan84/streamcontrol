@@ -2,6 +2,10 @@
 
 A comprehensive Next.js-based streaming control center for professional broadcasters with complete SCTE-35 support, real-time monitoring, and advanced event management.
 
+**Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.**
+
+This software is proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
+
 ## 🎯 Features
 
 ### Core Functionality
@@ -223,7 +227,15 @@ npm run db:studio    # Open Prisma Studio
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proprietary software owned by Morus Broadcasting Pvt Ltd. All rights reserved.
+
+**License Terms:**
+- This software is licensed, not sold
+- Unauthorized copying, distribution, or use is strictly prohibited
+- Commercial use requires written permission from Morus Broadcasting Pvt Ltd
+- See the [LICENSE](LICENSE) file for complete terms and conditions
+
+For licensing inquiries, please contact Morus Broadcasting Pvt Ltd.
 
 ## 🤝 Support
 
@@ -234,8 +246,18 @@ For support and questions:
 
 ## 📞 Contact
 
-Created with ❤️ for professional broadcasters. For support and inquiries, please open an issue in the GitHub repository.
+**Morus Broadcasting Pvt Ltd**
+
+For licensing inquiries, support, and business opportunities:
+- **Email**: [Your Email]
+- **Phone**: [Your Phone]
+- **Website**: [Your Website]
+- **Address**: [Your Address]
+
+Created with ❤️ for professional broadcasters by Morus Broadcasting Pvt Ltd.
 
 ---
 
 **StreamControl** - Professional SCTE-35 Streaming Control Center
+
+*Copyright (c) 2024 Morus Broadcasting Pvt Ltd. All rights reserved.*
