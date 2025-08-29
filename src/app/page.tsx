@@ -34,6 +34,7 @@ import FFmpegManager from '@/components/FFmpegManager'
 import SRTStreamTemplate from '@/components/SRTStreamTemplate'
 import ChannelManager from '@/components/ChannelManager'
 import SCTE35EventTemplate from '@/components/SCTE35EventTemplate'
+import SettingsComponent from '@/components/Settings'
 import ClientOnly from '@/components/ClientOnly'
 
 interface Channel {
@@ -203,7 +204,7 @@ export default function StreamingDashboard() {
       {/* Main Content */}
       <main className="p-6">
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-7">
+          <TabsList className="grid w-full grid-cols-8">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="monitoring">Real-time Monitor</TabsTrigger>
             <TabsTrigger value="ffmpeg">FFmpeg</TabsTrigger>
@@ -211,6 +212,7 @@ export default function StreamingDashboard() {
             <TabsTrigger value="channels">Channels</TabsTrigger>
             <TabsTrigger value="events">SCTE-35 Events</TabsTrigger>
             <TabsTrigger value="logs">Logs</TabsTrigger>
+            <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -387,6 +389,12 @@ export default function StreamingDashboard() {
                 </Alert>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="settings">
+            <ClientOnly fallback={<div className="p-8 text-center">Loading settings...</div>}>
+              <SettingsComponent />
+            </ClientOnly>
           </TabsContent>
         </Tabs>
       </main>
