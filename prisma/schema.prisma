@@ -1,0 +1,151 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  channels   StreamingChannel[]
+  events     SCTE35Event[]
+  configs    StreamConfiguration[]
+}
+
+model StreamingChannel {
+  id              String   @id @default(cuid())
+  name            String
+  description     String?
+  inputUrl        String
+  outputUrl       String
+  status          ChannelStatus @default(OFFLINE)
+  bitrate         Int?
+  resolution      String?
+  fps             Int?
+  audioChannels   Int?
+  userId          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  user        User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  events      SCTE35Event[]
+  configs     StreamConfiguration[]
+  logs        StreamLog[]
+}
+
+model SCTE35Event {
+  id              String   @id @default(cuid())
+  eventId         String   // SCTE-35 event ID
+  commandType     SCTE35CommandType
+  duration        Int?    // Duration in seconds
+  description     String?
+  startTime       DateTime?
+  endTime         DateTime?
+  isRecurring     Boolean  @default(false)
+  recurringPattern String? // Cron expression for recurring events
+  channelId       String
+  userId          String
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  channel    StreamingChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  schedules  EventSchedule[]
+}
+
+model StreamConfiguration {
+  id                   String   @id @default(cuid())
+  name                 String
+  channelId            String
+  userId               String
+  ffmpegCommand        String
+  scte35Pid            Int      @default(511) // 0x1FF
+  videoPid             Int      @default(257)  // 0x101
+  audioPid             Int      @default(258)  // 0x102
+  serviceId            Int      @default(1)
+  pmtStartPid          Int      @default(4096) // 0x1000
+  startPid             Int      @default(257)  // 0x101
+  nullPid              Int      @default(8191) // 0x1FFF
+  latency              Int      @default(2000000)
+  mode                 String   @default("caller")
+  isActive             Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  
+  // Relations
+  channel  StreamingChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model EventSchedule {
+  id              String   @id @default(cuid())
+  eventId         String
+  scheduledTime   DateTime
+  executed        Boolean  @default(false)
+  executionTime   DateTime?
+  status          ScheduleStatus @default(PENDING)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  event    SCTE35Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model StreamLog {
+  id          String   @id @default(cuid())
+  channelId   String
+  level       LogLevel @default(INFO)
+  message     String
+  metadata    String?  // JSON string for additional data
+  createdAt   DateTime @default(now())
+  
+  // Relations
+  channel StreamingChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+}
+
+enum ChannelStatus {
+  ONLINE
+  OFFLINE
+  STARTING
+  STOPPING
+  ERROR
+}
+
+enum SCTE35CommandType {
+  SPLICE_INSERT
+  SPLICE_NULL
+  TIME_SIGNAL
+  BANDWIDTH_RESERVATION
+  PRIVATE_COMMAND
+}
+
+enum ScheduleStatus {
+  PENDING
+  EXECUTED
+  FAILED
+  CANCELLED
+}
+
+enum LogLevel {
+  DEBUG
+  INFO
+  WARN
+  ERROR
+}
