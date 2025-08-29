@@ -9,6 +9,10 @@ Welcome to the StreamControl documentation! This comprehensive guide will help y
 - **[Technical Documentation](./TECHNICAL_DOCUMENTATION.md)** - Architecture and development details
 - **[API Reference](./API_REFERENCE.md)** - Complete API documentation
 
+### 💻 Installation Guides
+- **[Windows Installation](./INSTALLATION_WINDOWS.md)** - Complete setup guide for Windows
+- **[Ubuntu 22.04 Installation](./INSTALLATION_UBUNTU.md)** - Complete setup guide for Ubuntu
+
 ### 📖 Quick Start Guide
 
 #### Prerequisites
