@@ -339,21 +339,9 @@ export default function StreamingDashboard() {
           </TabsContent>
 
           <TabsContent value="channels">
-            <Card>
-              <CardHeader>
-                <CardTitle>Channel Management</CardTitle>
-                <CardDescription>Configure and manage your streaming channels</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Alert>
-                  <AlertTriangle className="h-4 w-4" />
-                  <AlertDescription>
-                    Channel management interface will be implemented here. This will include channel creation, 
-                    configuration, and real-time monitoring controls.
-                  </AlertDescription>
-                </Alert>
-              </CardContent>
-            </Card>
+            <ClientOnly fallback={<div className="p-8 text-center">Loading channel manager...</div>}>
+              <ChannelManager />
+            </ClientOnly>
           </TabsContent>
 
           <TabsContent value="events">

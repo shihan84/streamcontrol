@@ -35,7 +35,7 @@ import {
   Music,
   News,
   Sports,
-  Advertisement
+  Megaphone
 } from 'lucide-react'
 
 interface SCTE35EventTemplate {
@@ -349,7 +349,7 @@ export default function SCTE35EventTemplate({ channelId, onEventCreate, onEventE
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'commercial': return <Advertisement className="h-4 w-4" />
+      case 'commercial': return <Megaphone className="h-4 w-4" />
       case 'program': return <Tv className="h-4 w-4" />
       case 'emergency': return <AlertTriangle className="h-4 w-4" />
       case 'maintenance': return <Settings className="h-4 w-4" />
